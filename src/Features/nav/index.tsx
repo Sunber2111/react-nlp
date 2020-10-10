@@ -27,7 +27,7 @@ const Navigation = () => {
       <AppBar position="fixed" className='nav'>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Tenet
+            NLP Label App
           </Typography>
         </Toolbar>
       </AppBar>
