@@ -1,0 +1,17 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        background: linear-gradient(to right, #1692b8, #0aee61);
+        padding: 10px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 30px;
+        font-weight: 600;
+        right: 30px;
+    }
+}

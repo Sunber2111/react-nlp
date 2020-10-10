@@ -1,0 +1,17 @@
+.select-mode {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  .alert{
+    margin-bottom: 40px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-chose {
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
