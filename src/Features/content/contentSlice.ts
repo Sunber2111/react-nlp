@@ -8,6 +8,7 @@ type ContentState = {
   currentComment: IComment;
   labelSelect: Number;
   indexSelect: number;
+  sumOfComments: Number;
 };
 
 const initialState: ContentState = {
@@ -20,6 +21,7 @@ const initialState: ContentState = {
   },
   indexSelect: 0,
   labelSelect: 0,
+  sumOfComments: 0,
 };
 
 const content = createSlice({
@@ -32,6 +34,7 @@ const content = createSlice({
     setComment(state, action: PayloadAction<String[]>) {
       state.comments = action.payload;
       state.currentComment = { content: action.payload[0], label: 0 };
+      state.sumOfComments = action.payload.length;
     },
     pushCommentLabel(state, action: PayloadAction<IComment>) {
       state.commentsLabel.push(action.payload);
@@ -39,10 +42,11 @@ const content = createSlice({
     setLabelSelect(state, action: PayloadAction<Number>) {
       state.labelSelect = action.payload;
     },
-    setCurrentCommentLabel(state, action:PayloadAction) {
+    setCurrentCommentLabel(state, action: PayloadAction) {
+      if (state.sumOfComments === state.indexSelect) return;
       state.commentsLabel.push({
         content: state.currentComment.content,
-        label: state.labelSelect
+        label: state.labelSelect,
       });
       state.indexSelect++;
       state.currentComment = {
@@ -60,7 +64,7 @@ export const {
   setComment,
   pushCommentLabel,
   setLabelSelect,
-  setCurrentCommentLabel
+  setCurrentCommentLabel,
 } = actions;
 
 export default reducer;
